@@ -34,6 +34,8 @@ result = issues.find do |issue|
 end
 
 if result
+  print "\nNew status: "
+  result.status = gets.strip
   puts "\nFound: "
   puts result.display
 else
