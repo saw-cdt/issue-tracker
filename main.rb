@@ -26,28 +26,16 @@ ui_issue = Issue.new(
 
 issues = [login_issue, auth_issue, ui_issue]
 
-print "Title: "
-title = gets.strip
+print "Search for ID: "
+id_search = gets.strip.to_i
 
-print "Description: "
-description = gets.strip
+result = issues.find do |issue|
+  issue.id == id_search
+end
 
-print "Status: "
-status = gets.strip
-
-print "Priority: "
-priority = gets.strip
-
-user_issue = Issue.new(
-  4,
-  title,
-  description,
-  status,
-  priority
-)
-
-issues.append(user_issue)
-
-issues.each do |issue|
-  puts issue.display
+if result
+  puts "\nFound: "
+  puts result.display
+else
+  puts "\nIssue not found"
 end
