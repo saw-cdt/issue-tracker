@@ -1,1 +1,12 @@
 <h1>Issue Tracker</h1>
+<ul>
+  <% @issues.each do |issue| %>
+    <li>
+      <%= issue.id %> - 
+      <%= issue.title %> - 
+      <%= issue.description %> - 
+      <%= issue.status %> - 
+      <%= issue.priority %>
+    </li>
+  <% end %>
+</ul>
