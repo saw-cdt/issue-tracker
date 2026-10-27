@@ -1,25 +1,21 @@
 <h1>Issue Tracker</h1>
-<form action="/issues" method="post">
-  <input name="title" placeholder="title">
+<%= form_with model: @issue do |form| %>
+
+  <%= form.label :title %>
+  <%= form.text_field :title %>
   <br>
 
-  <input name="description" placeholder="description">
+  <%= form.label :description %>
+  <%= form.text_area :description %>
   <br>
-  
-  <label>status</label>
-  <select name="status">
-    <option value="open">open</option>
-    <option value="closed">closed</option>
-  </select>
-  <br>
-  
-  <label>priority</label>
-  <select name="priority" placeholder="priority"> 
-    <option value="low">low</option>
-    <option value="mid">mid</option>
-    <option value="high">high</option>
-  </select>
 
+  <%= form.label :status %>
+  <%= form.select :status, ["open","closed"]%>
   <br>
-  <button type="submit">Send</button>
-</form>
+
+  <%= form.label :priority %>
+  <%= form.select :priority, ["low", "mid", "high"] %>
+  <br>
+
+  <%= form.submit "Create Issue" %>
+<% end %>
