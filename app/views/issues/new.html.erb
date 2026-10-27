@@ -1,0 +1,25 @@
+<h1>Issue Tracker</h1>
+<form action="/issues" method="post">
+  <input name="title" placeholder="title">
+  <br>
+
+  <input name="description" placeholder="description">
+  <br>
+  
+  <label>status</label>
+  <select name="status">
+    <option value="open">open</option>
+    <option value="closed">closed</option>
+  </select>
+  <br>
+  
+  <label>priority</label>
+  <select name="priority" placeholder="priority"> 
+    <option value="low">low</option>
+    <option value="mid">mid</option>
+    <option value="high">high</option>
+  </select>
+
+  <br>
+  <button type="submit">Send</button>
+</form>
